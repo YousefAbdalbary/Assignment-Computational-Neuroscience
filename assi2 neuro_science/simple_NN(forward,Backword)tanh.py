@@ -50,16 +50,16 @@ deltaH1 = (delta_o1 * w5 + delta_o2 * w7) * tanh_derivative(net_h1)
 deltaH2 = (delta_o1 * w6 + delta_o2 * w8) * tanh_derivative(net_h2)
 
 
-w1 += learning_rate * deltaH1 * i1
-w2 += learning_rate * deltaH1 * i2
-w3 += learning_rate * deltaH2 * i1
-w4 += learning_rate * deltaH2 * i2
+w1 -= learning_rate * deltaH1 * i1
+w2 -= learning_rate * deltaH1 * i2
+w3 -= learning_rate * deltaH2 * i1
+w4 -= learning_rate * deltaH2 * i2
 
 
-w5 += learning_rate * delta_o1 * out_h1
-w6 += learning_rate * delta_o1 * out_h2
-w7 += learning_rate * delta_o2 * out_h1
-w8 += learning_rate * delta_o2 * out_h2
+w5 -= learning_rate * delta_o1 * out_h1
+w6 -= learning_rate * delta_o1 * out_h2
+w7 -= learning_rate * delta_o2 * out_h1
+w8 -= learning_rate * delta_o2 * out_h2
 
 
 print('\n\nBackpropagation')
